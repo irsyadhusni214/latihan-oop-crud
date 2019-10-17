@@ -28,10 +28,10 @@ class Biodata extends Database
         return $data;
     }
     // Menambah Data
-    public function create($nama, $alamat, $tgl_lahir, $jenis_kelamin, $agama)
+    public function create($nama, $alamat, $tgl_lahir, $jenis_kelamin, $agama, $umur)
     {
 
-        mysqli_query($this->koneksi, "insert into biodata values('','$nama','$alamat', '$tgl_lahir', '$jenis_kelamin', '$agama')");
+        mysqli_query($this->koneksi, "insert into biodata values(null,'$nama','$alamat', '$tgl_lahir', '$jenis_kelamin', '$agama', '$umur')");
     }
     // Menampilkan Data Berdasarkan ID
     public function show($id)
@@ -46,9 +46,9 @@ class Biodata extends Database
         return $data;
     }
     // mengupdate data berdasarkan id
-    public function update($id, $nama, $alamat, $tgl_lahir, $jenis_kelamin, $agama)
+    public function update($id, $nama, $alamat, $tgl_lahir, $jenis_kelamin, $agama, $umur)
     {
-        mysqli_query($this->koneksi, "update biodata set nama='$nama', alamat='$alamat', tgl_lahir='$tgl_lahir', jenis_kelamin='$jenis_kelamin', agama='$agama' where id='$id'");
+        mysqli_query($this->koneksi, "update biodata set nama='$nama', alamat='$alamat', tgl_lahir='$tgl_lahir', jenis_kelamin='$jenis_kelamin', agama='$agama', umur='$umur' where id='$id'");
     }
     // menghapus data berdasarkan id
     public function delete($id)

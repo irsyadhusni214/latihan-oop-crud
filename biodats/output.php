@@ -10,13 +10,13 @@ if (isset($_POST['proses'])) {
     $tgl_lahir = $_POST['tgl_lahir'];
     $jenis_kelamin = $_POST['jenis_kelamin'];
     $agama = $_POST['agama'];
-    $umur = date('y') - $tgl_lahir;
+    $umur = date('Y') - $tgl_lahir;
 }
 if ($aksi == "tambah") {
-    $biodata->create($nama, $alamat, $tgl_lahir, $jenis_kelamin, $agama);
+    $biodata->create($nama, $alamat, $tgl_lahir, $jenis_kelamin, $agama, $umur);
     header("location:index.php");
 } else if ($aksi == "update") {
-    $biodata->update($id, $nama, $alamat, $tgl_lahir, $jenis_kelamin, $agama);
+    $biodata->update($id, $nama, $alamat, $tgl_lahir, $jenis_kelamin, $agama, $umur);
     header("location:index.php");
 } else if ($aksi == "delete") {
     $biodata->delete($_GET['id']);
